@@ -17,7 +17,7 @@ Este é um boilerplate padronizado para microsserviços em Go, utilizando o fram
 
 ## Tecnologias Utilizadas
 
-- [Go](https://go.dev/) (v1.21+)
+- [Go](https://go.dev/) (v1.26+)
 - [Gin Gonic](https://gin-gonic.com/) - Framework Web
 - [OpenTelemetry](https://opentelemetry.io/) - Observabilidade
 - [godotenv](https://github.com/joho/godotenv) - Gerenciamento de variáveis de ambiente
@@ -38,7 +38,7 @@ Este é um boilerplate padronizado para microsserviços em Go, utilizando o fram
 ## Como Começar
 
 ### Pré-requisitos
-- Go 1.21 ou superior
+- Go 1.26 ou superior
 - Docker (opcional, para execução em container)
 
 ### Instalação

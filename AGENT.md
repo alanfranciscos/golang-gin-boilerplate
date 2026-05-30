@@ -24,6 +24,7 @@ Dependencies are injected via interfaces (Ports), allowing for easy testing with
 ## Quality Standards
 
 - **Unit Testing:** Mandatory for all files.
+- **Go Version:** Mandatory Go v1.26 or higher.
 - **Coverage:** Minimum of 90% coverage per file.
 - **Static Analysis:** Code must pass linting and formatting checks.
 

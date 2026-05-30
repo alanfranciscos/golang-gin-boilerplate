@@ -1,6 +1,6 @@
 module github.com/alanf/go-boilerplate
 
-go 1.26.1
+go 1.26
 
 require (
 	github.com/alanfranciscos/otel-collector v0.0.0-00010101000000-000000000000
