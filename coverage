@@ -1,0 +1,7 @@
+mode: set
+github.com/alanf/go-boilerplate/internal/config/config.go:16.27,18.16 2 1
+github.com/alanf/go-boilerplate/internal/config/config.go:18.16,20.3 1 1
+github.com/alanf/go-boilerplate/internal/config/config.go:22.2,26.3 1 1
+github.com/alanf/go-boilerplate/internal/config/config.go:29.46,30.48 1 1
+github.com/alanf/go-boilerplate/internal/config/config.go:30.48,32.3 1 1
+github.com/alanf/go-boilerplate/internal/config/config.go:33.2,33.21 1 1
