@@ -31,23 +31,23 @@ Dependencies are injected via interfaces (Ports), allowing for easy testing with
 
 To maintain the integrity of the project, the following rules are strictly enforced:
 
-1.  **Architectural Isolation:** The Domain layer MUST NOT import any external frameworks (e.g., Gin, Gorm) or infrastructure-specific packages.
-2.  **Commit Standards:**
-    - Must follow **Conventional Commits**.
-    - Must be in **English**.
-    - Maximum of **70 characters** for the subject line.
-    - **No co-authors** (`Co-authored-by:`) allowed.
-    - Commits must be **atomic**.
-3.  **Quality Enforcement:**
-    - Every `.go` file must have a corresponding `_test.go` file.
-    - `make test` will fail if coverage drops below 90% on any modified file.
-    - Multi-stage Docker builds must be used to keep production images lean.
-    - **Linting:** Code MUST pass `golangci-lint` without any errors or warnings.
-    - **Formatting:** Code MUST be formatted using `go fmt`.
+### 1. Architectural Isolation
+The Domain layer MUST NOT import any external frameworks (e.g., Gin, Gorm) or infrastructure-specific packages.
 
+### 2. Commit Standards
+- Must follow **Conventional Commits**.
+- Must be in **English**.
+- Maximum of **70 characters** for the subject line.
+- **No co-authors** (`Co-authored-by:`) allowed.
+- Commits must be **atomic**.
 
-4.  **Database Access:**
-    - **No ORM:** The use of ORMs (e.g., Gorm, Ent) is strictly prohibited.
-    - **Raw SQL:** All database queries MUST be written as raw SQL to ensure maximum performance, predictability, and control.
+### 3. Quality Enforcement
+- Every `.go` file must have a corresponding `_test.go` file.
+- `make test` will fail if coverage drops below 90% on any modified file.
+- Multi-stage Docker builds must be used to keep production images lean.
+- **Linting:** Code MUST pass `golangci-lint` without any errors or warnings.
+- **Formatting:** Code MUST be formatted using `go fmt`.
 
-
+### 4. Database Access
+- **No ORM:** The use of ORMs (e.g., Gorm, Ent) is strictly prohibited.
+- **Raw SQL:** All database queries MUST be written as raw SQL to ensure maximum performance, predictability, and control.
