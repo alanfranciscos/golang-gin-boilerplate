@@ -9,8 +9,8 @@ run:
 	go run cmd/api/main.go
 
 test:
-	go test -coverprofile=coverage.out -coverpkg=./... ./...
-	go tool cover -func coverage.out
+	go test ./...
+
 
 format:
 	go fmt ./...
