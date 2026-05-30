@@ -1,13 +1,14 @@
 package mocks
 
 import (
+	"context"
 	"github.com/alanf/go-boilerplate/internal/domain"
 )
 
 type HealthServiceMock struct {
-	GetHealthFunc func() domain.Health
+	GetHealthFunc func(ctx context.Context) domain.Health
 }
 
-func (m *HealthServiceMock) GetHealth() domain.Health {
-	return m.GetHealthFunc()
+func (m *HealthServiceMock) GetHealth(ctx context.Context) domain.Health {
+	return m.GetHealthFunc(ctx)
 }

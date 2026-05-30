@@ -1,6 +1,7 @@
 package web
 
 import (
+	"context"
 	"encoding/json"
 	"net/http"
 	"net/http/httptest"
@@ -24,7 +25,7 @@ func TestServer_HandleHealth(t *testing.T) {
 	}
 
 	mockHealthService := &mocks.HealthServiceMock{
-		GetHealthFunc: func() domain.Health {
+		GetHealthFunc: func(ctx context.Context) domain.Health {
 			return expectedHealth
 		},
 	}

@@ -1,6 +1,7 @@
 package application
 
 import (
+	"context"
 	"time"
 
 	"github.com/alanf/go-boilerplate/internal/domain"
@@ -24,7 +25,7 @@ func NewHealthCheckUseCase(version, environment string) HealthService {
 	}
 }
 
-func (u *healthCheckUseCase) GetHealth() domain.Health {
+func (u *healthCheckUseCase) GetHealth(ctx context.Context) domain.Health {
 	return domain.Health{
 		Status:      "UP",
 		Timestamp:   time.Now().UTC(),

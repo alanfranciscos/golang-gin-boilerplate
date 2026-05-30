@@ -8,9 +8,12 @@ import (
 )
 
 type Config struct {
-	AppEnv     string
-	AppPort    string
-	AppVersion string
+	AppEnv            string
+	AppPort           string
+	AppVersion        string
+	AppName           string
+	OTLPEndpoint      string
+	OTLPProtocol      string
 }
 
 func LoadConfig() *Config {
@@ -20,9 +23,12 @@ func LoadConfig() *Config {
 	}
 
 	return &Config{
-		AppEnv:     getEnv("APP_ENV", "development"),
-		AppPort:    getEnv("APP_PORT", "8080"),
-		AppVersion: getEnv("APP_VERSION", "1.0.0"),
+		AppEnv:            getEnv("APP_ENV", "development"),
+		AppPort:           getEnv("APP_PORT", "8080"),
+		AppVersion:        getEnv("APP_VERSION", "1.0.0"),
+		AppName:           getEnv("APP_NAME", "go-boilerplate"),
+		OTLPEndpoint:      getEnv("OTEL_EXPORTER_OTLP_ENDPOINT", "localhost:4317"),
+		OTLPProtocol:      getEnv("OTEL_EXPORTER_OTLP_PROTOCOL", "http"),
 	}
 }
 

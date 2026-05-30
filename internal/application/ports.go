@@ -1,7 +1,10 @@
 package application
 
-import "github.com/alanf/go-boilerplate/internal/domain"
+import (
+	"context"
+	"github.com/alanf/go-boilerplate/internal/domain"
+)
 
 type HealthService interface {
-	GetHealth() domain.Health
+	GetHealth(ctx context.Context) domain.Health
 }

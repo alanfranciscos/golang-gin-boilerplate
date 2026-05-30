@@ -1,6 +1,7 @@
 package application
 
 import (
+	"context"
 	"testing"
 )
 
@@ -9,7 +10,7 @@ func TestHealthCheckUseCase_GetHealth(t *testing.T) {
 	environment := "test"
 	useCase := NewHealthCheckUseCase(version, environment)
 
-	health := useCase.GetHealth()
+	health := useCase.GetHealth(context.Background())
 
 	if health.Status != "UP" {
 		t.Errorf("Expected status UP, got %s", health.Status)

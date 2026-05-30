@@ -3,6 +3,7 @@ package web
 import (
 	"github.com/alanf/go-boilerplate/internal/application"
 	"github.com/gin-gonic/gin"
+	ginmdw "github.com/alanfranciscos/otel-collector/pkg/telemetry/middleware/gin"
 )
 
 type Server struct {
@@ -17,8 +18,14 @@ func NewServer(port string, healthService application.HealthService) *Server {
 		port:          port,
 		healthService: healthService,
 	}
+	s.setupMiddlewares()
 	s.setupRoutes()
 	return s
+}
+
+func (s *Server) setupMiddlewares() {
+	ginMdw := ginmdw.NewGinMiddlewareConfig()
+	s.router.Use(ginMdw.Middleware()...)
 }
 
 func (s *Server) setupRoutes() {
@@ -26,7 +33,7 @@ func (s *Server) setupRoutes() {
 }
 
 func (s *Server) handleHealth(c *gin.Context) {
-	health := s.healthService.GetHealth()
+	health := s.healthService.GetHealth(c.Request.Context())
 	c.JSON(200, health)
 }
 
