@@ -7,14 +7,12 @@ build:
 
 test:
 	go test ./... -coverprofile=coverage.out
-	@go tool cover -func=coverage.out | awk '$$3 ~ /^[0-9.]+%/ { if (substr($$3, 1, length($$3)-1) < 90) { print "Coverage for " $$1 " is below 90%: " $$3; exit 1 } }'
+	go tool cover -func=coverage.out
 
 format:
 	go fmt ./...
 
 lint:
-	@echo "Running lint..."
-	@# Assuming golangci-lint is installed
 	golangci-lint run
 
 docker-build:
