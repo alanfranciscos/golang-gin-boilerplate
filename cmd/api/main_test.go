@@ -6,7 +6,17 @@ import (
 	"testing"
 )
 
+func setTestEnv() {
+	os.Setenv("APP_ENV", "test")
+	os.Setenv("APP_PORT", "8080")
+	os.Setenv("APP_VERSION", "1.0.0")
+	os.Setenv("APP_NAME", "go-boilerplate")
+	os.Setenv("OTEL_EXPORTER_OTLP_ENDPOINT", "localhost:4317")
+	os.Setenv("OTEL_EXPORTER_OTLP_PROTOCOL", "http")
+}
+
 func TestRun_Error(t *testing.T) {
+	setTestEnv()
 	os.Setenv("APP_PORT", "invalid")
 	defer os.Unsetenv("APP_PORT")
 
@@ -17,6 +27,7 @@ func TestRun_Error(t *testing.T) {
 }
 
 func TestRun_Success(t *testing.T) {
+	setTestEnv()
 	// Skip if running in environment where port 8080 is taken
 	// but since we are using a cancelled context, it should shut down immediately
 	ctx, cancel := context.WithCancel(context.Background())
@@ -29,6 +40,7 @@ func TestRun_Success(t *testing.T) {
 }
 
 func TestMain_Error(t *testing.T) {
+	setTestEnv()
 	os.Setenv("APP_PORT", "invalid")
 	defer os.Unsetenv("APP_PORT")
 

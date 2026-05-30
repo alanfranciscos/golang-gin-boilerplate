@@ -19,22 +19,25 @@ type Config struct {
 func LoadConfig() *Config {
 	err := godotenv.Load()
 	if err != nil {
-		log.Println("No .env file found, using system environment variables")
+		log.Println("No .env file found, relying on system environment variables")
 	}
 
-	return &Config{
-		AppEnv:            getEnv("APP_ENV", "development"),
-		AppPort:           getEnv("APP_PORT", "8080"),
-		AppVersion:        getEnv("APP_VERSION", "1.0.0"),
-		AppName:           getEnv("APP_NAME", "go-boilerplate"),
-		OTLPEndpoint:      getEnv("OTEL_EXPORTER_OTLP_ENDPOINT", "localhost:4317"),
-		OTLPProtocol:      getEnv("OTEL_EXPORTER_OTLP_PROTOCOL", "http"),
+	cfg := &Config{
+		AppEnv:            requireEnv("APP_ENV"),
+		AppPort:           requireEnv("APP_PORT"),
+		AppVersion:        requireEnv("APP_VERSION"),
+		AppName:           requireEnv("APP_NAME"),
+		OTLPEndpoint:      requireEnv("OTEL_EXPORTER_OTLP_ENDPOINT"),
+		OTLPProtocol:      requireEnv("OTEL_EXPORTER_OTLP_PROTOCOL"),
 	}
+
+	return cfg
 }
 
-func getEnv(key, defaultValue string) string {
-	if value, exists := os.LookupEnv(key); exists {
-		return value
+func requireEnv(key string) string {
+	value, exists := os.LookupEnv(key)
+	if !exists || value == "" {
+		log.Fatalf("Required environment variable %s is not set", key)
 	}
-	return defaultValue
+	return value
 }
