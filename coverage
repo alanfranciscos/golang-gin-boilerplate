@@ -1,4 +1,15 @@
 mode: set
+github.com/alanf/go-boilerplate/internal/application/mocks/health_service_mock.go:11.55,13.2 1 0
+github.com/alanf/go-boilerplate/internal/infrastructure/web/server.go:14.78,22.2 3 1
+github.com/alanf/go-boilerplate/internal/infrastructure/web/server.go:24.32,26.2 1 1
+github.com/alanf/go-boilerplate/internal/infrastructure/web/server.go:28.47,31.2 2 1
+github.com/alanf/go-boilerplate/internal/infrastructure/web/server.go:33.30,35.2 1 1
+github.com/alanf/go-boilerplate/cmd/api/main.go:13.13,14.30 1 1
+github.com/alanf/go-boilerplate/cmd/api/main.go:14.30,16.3 1 1
+github.com/alanf/go-boilerplate/cmd/api/main.go:19.18,27.2 5 1
+github.com/alanf/go-boilerplate/internal/application/health_usecase.go:11.13,13.2 1 1
+github.com/alanf/go-boilerplate/internal/application/health_usecase.go:20.71,25.2 1 1
+github.com/alanf/go-boilerplate/internal/application/health_usecase.go:27.56,35.2 1 1
 github.com/alanf/go-boilerplate/internal/config/config.go:16.27,18.16 2 1
 github.com/alanf/go-boilerplate/internal/config/config.go:18.16,20.3 1 1
 github.com/alanf/go-boilerplate/internal/config/config.go:22.2,26.3 1 1
