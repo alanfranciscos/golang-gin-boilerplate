@@ -43,3 +43,8 @@ To maintain the integrity of the project, the following rules are strictly enfor
     - `make test` will fail if coverage drops below 90% on any modified file.
     - Multi-stage Docker builds must be used to keep production images lean.
 
+4.  **Database Access:**
+    - **No ORM:** The use of ORMs (e.g., Gorm, Ent) is strictly prohibited.
+    - **Raw SQL:** All database queries MUST be written as raw SQL to ensure maximum performance, predictability, and control.
+
+
