@@ -26,3 +26,20 @@ Dependencies are injected via interfaces (Ports), allowing for easy testing with
 - **Unit Testing:** Mandatory for all files.
 - **Coverage:** Minimum of 90% coverage per file.
 - **Static Analysis:** Code must pass linting and formatting checks.
+
+## Guardrails
+
+To maintain the integrity of the project, the following rules are strictly enforced:
+
+1.  **Architectural Isolation:** The Domain layer MUST NOT import any external frameworks (e.g., Gin, Gorm) or infrastructure-specific packages.
+2.  **Commit Standards:**
+    - Must follow **Conventional Commits**.
+    - Must be in **English**.
+    - Maximum of **70 characters** for the subject line.
+    - **No co-authors** (`Co-authored-by:`) allowed.
+    - Commits must be **atomic**.
+3.  **Quality Enforcement:**
+    - Every `.go` file must have a corresponding `_test.go` file.
+    - `make test` will fail if coverage drops below 90% on any modified file.
+    - Multi-stage Docker builds must be used to keep production images lean.
+
