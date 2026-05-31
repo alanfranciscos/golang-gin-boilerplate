@@ -3,7 +3,7 @@ module github.com/alanf/go-boilerplate
 go 1.26
 
 require (
-	github.com/alanfranciscos/otel-lgtm-sdk-go v0.1.0
+	github.com/alanfranciscos/otel-lgtm-sdk-go v0.1.1
 	github.com/gin-gonic/gin v1.12.0
 	github.com/joho/godotenv v1.5.1
 )

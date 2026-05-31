@@ -1,5 +1,5 @@
-github.com/alanfranciscos/otel-lgtm-sdk-go v0.1.0 h1:oEQBD5aqftmmMkmmIZ+k/eeXcNKxo9MTG7YmnsAJ8uo=
-github.com/alanfranciscos/otel-lgtm-sdk-go v0.1.0/go.mod h1:FVLY8uLkZ9jwvzLEsOBPUAH7FgE+QnEh3a0e44ahybI=
+github.com/alanfranciscos/otel-lgtm-sdk-go v0.1.1 h1:FHrsl+9VAg3tHOW8fynh5ZdwSy2Hkljb3EOs5yd5GpI=
+github.com/alanfranciscos/otel-lgtm-sdk-go v0.1.1/go.mod h1:FVLY8uLkZ9jwvzLEsOBPUAH7FgE+QnEh3a0e44ahybI=
 github.com/bytedance/gopkg v0.1.4 h1:oZnQwnX82KAIWb7033bEwtxvTqXcYMxDBaQxo5JJHWM=
 github.com/bytedance/gopkg v0.1.4/go.mod h1:v1zWfPm21Fb+OsyXN2VAHdL6TBb2L88anLQgdyje6R4=
 github.com/bytedance/sonic v1.15.1 h1:nJD5PmM0vY7J8CT6MxoqbVAAMhkSmV2HgRAUrrpLoOw=
