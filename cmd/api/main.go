@@ -42,7 +42,7 @@ func Run(ctx context.Context) error {
 	}()
 
 	healthService := application.NewHealthCheckUseCase(cfg.AppVersion, cfg.AppEnv)
-	server := web.NewServer(cfg.AppPort, healthService)
+	server := web.NewServer(cfg.AppPort, cfg.AppName, healthService)
 
 	log.Printf("Starting server on port %s", cfg.AppPort)
 	

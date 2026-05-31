@@ -3,19 +3,21 @@ package web
 import (
 	"github.com/alanf/go-boilerplate/internal/application"
 	"github.com/gin-gonic/gin"
-	ginmdw "github.com/alanfranciscos/otel-collector/pkg/telemetry/middleware/gin"
+	"github.com/alanfranciscos/otel-lgtm-sdk-go/pkg/telemetry/middleware"
 )
 
 type Server struct {
 	router        *gin.Engine
 	port          string
+	appName       string
 	healthService application.HealthService
 }
 
-func NewServer(port string, healthService application.HealthService) *Server {
+func NewServer(port string, appName string, healthService application.HealthService) *Server {
 	s := &Server{
 		router:        gin.Default(),
 		port:          port,
+		appName:       appName,
 		healthService: healthService,
 	}
 	s.setupMiddlewares()
@@ -24,8 +26,7 @@ func NewServer(port string, healthService application.HealthService) *Server {
 }
 
 func (s *Server) setupMiddlewares() {
-	ginMdw := ginmdw.NewGinMiddlewareConfig()
-	s.router.Use(ginMdw.Middleware()...)
+	s.router.Use(middleware.GinMiddleware(s.appName))
 }
 
 func (s *Server) setupRoutes() {

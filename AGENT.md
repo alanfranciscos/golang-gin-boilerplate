@@ -28,6 +28,13 @@ Dependencies are injected via interfaces (Ports), allowing for easy testing with
 - **Coverage:** Minimum of 90% coverage per file.
 - **Static Analysis:** Code must pass linting and formatting checks.
 
+## Observability Standards
+
+- **SDK:** Mandatory use of `otel-lgtm-sdk-go`.
+- **Fail-Fast:** The application must panic during initialization if `OTEL_SERVICE_NAME` or `OTEL_EXPORTER_OTLP_ENDPOINT` are missing.
+- **Context Propagation:** Traces must be propagated through all layers using `context.Context`.
+- **Sanitization:** Sensitive data (passwords, tokens) must be masked in logs and traces using the SDK's built-in sanitization.
+
 ## Guardrails
 
 To maintain the integrity of the project, the following rules are strictly enforced:

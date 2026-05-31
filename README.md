@@ -5,7 +5,8 @@ Este é um boilerplate padronizado para microsserviços em Go, utilizando o fram
 ## Funcionalidades
 
 - **Arquitetura Hexagonal:** Isolamento total da lógica de negócio das dependências de infraestrutura.
-- **Observabilidade:** Integração nativa com OpenTelemetry (OTel) para rastreamento (tracing) e métricas.
+- **Observability:** Integração nativa com a stack LGTM (Loki, Grafana, Tempo, Mimir) via o [otel-lgtm-sdk-go](https://github.com/alanfranciscos/otel-lgtm-sdk-go). Oferece tracing distribuído, métricas e logs canônicos com sanitização de PII automática.
+
 - **Monitoramento:** Endpoint de /health padronizado retornando status, uptime e versão.
 - **Qualidade de Código:** 
     - Testes unitários obrigatórios com cobertura mínima de 90%.

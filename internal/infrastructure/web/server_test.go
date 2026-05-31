@@ -30,7 +30,7 @@ func TestServer_HandleHealth(t *testing.T) {
 		},
 	}
 
-	server := NewServer("8080", mockHealthService)
+	server := NewServer("8080", "test-app", mockHealthService)
 
 	req, _ := http.NewRequest(http.MethodGet, "/health", nil)
 	w := httptest.NewRecorder()
@@ -57,7 +57,7 @@ func TestServer_HandleHealth(t *testing.T) {
 
 func TestServer_Run_Error(t *testing.T) {
 	mockHealthService := &mocks.HealthServiceMock{}
-	server := NewServer("invalid", mockHealthService)
+	server := NewServer("invalid", "test-app", mockHealthService)
 
 	err := server.Run()
 	if err == nil {
